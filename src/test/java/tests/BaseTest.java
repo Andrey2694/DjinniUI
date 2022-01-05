@@ -1,5 +1,6 @@
 package tests;
 
+import com.codeborne.selenide.Configuration;
 import config.Project;
 import helpers.AllureAttachments;
 import helpers.DriverSettings;
@@ -14,10 +15,11 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 
 @ExtendWith({AllureJunit5.class})
-public class TestBase {
+public class BaseTest {
     @BeforeAll
     static void setUp() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        Configuration.baseUrl = "https://djinni.co/";
         DriverSettings.configure();
     }
 

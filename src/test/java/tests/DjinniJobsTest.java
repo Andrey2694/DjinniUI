@@ -2,21 +2,22 @@ package tests;
 
 import com.codeborne.selenide.CollectionCondition;
 import helpers.DriverUtils;
-import io.qameta.allure.Description;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class DjinniJobsTest extends TestBase {
+@Tag("djinni")
+public class DjinniJobsTest extends BaseTest {
 
     @Test
-    @DisplayName("https://djinni.co/jobs/ page has vacancy items on the page")
-    void getListOfJobsTest() {
+    @DisplayName("Vacancy items are displayed on the page")
+    void getListOfVacancyTest() {
         step("Open website", () -> {
-            open("https://djinni.co/jobs/");
+            open("jobs/");
         });
 
         step("Find all vacancy on the page", () -> {
@@ -28,7 +29,7 @@ public class DjinniJobsTest extends TestBase {
     @DisplayName("Set Java filter and make sure that filter is displayed")
     void filterJavaTest() {
         step("Open website", () -> {
-            open("https://djinni.co/jobs/");
+            open("jobs/");
         });
 
         step("Set filter", () -> {
@@ -41,10 +42,10 @@ public class DjinniJobsTest extends TestBase {
     }
 
     @Test
-    @DisplayName("Set Java filter and make sure that vacancy contain Java in title")
+    @DisplayName("Set Java filter and make sure that vacancies have Java in title")
     void filterJavaJobTitleTest() {
         step("Open website", () -> {
-            open("https://djinni.co/jobs/");
+            open("jobs/");
         });
 
         step("Find count of jobs on the website", () -> {
@@ -59,8 +60,8 @@ public class DjinniJobsTest extends TestBase {
     @Test
     @DisplayName("Page console log should not have errors")
     void consoleShouldNotHaveErrorsTest() {
-        step("Open 'https://djinni.co/jobs/'", () ->
-                open("https://djinni.co/jobs/"));
+        step("Open website", () ->
+                open("jobs/"));
 
         step("Console logs should not contain text 'SEVERE'", () -> {
             String consoleLogs = DriverUtils.getConsoleLogs();
