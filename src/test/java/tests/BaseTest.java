@@ -19,7 +19,7 @@ public class BaseTest {
     @BeforeAll
     static void setUp() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        Configuration.baseUrl = "https://djinni.co/";
+//        Configuration.baseUrl = "https://djinni.co/";
         DriverSettings.configure();
     }
 

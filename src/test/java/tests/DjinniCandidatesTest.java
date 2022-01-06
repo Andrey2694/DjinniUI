@@ -7,8 +7,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import java.util.stream.Collectors;
-
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -20,7 +18,7 @@ public class DjinniCandidatesTest extends BaseTest {
     @DisplayName("Candidate items are displayed on the page")
     void getListOfCandidateTest() {
         step("Open website", () -> {
-            open("/developers");
+            open("https://djinni.co/developers");
         });
 
         step("Find all candidates on the page", () -> {
@@ -32,7 +30,7 @@ public class DjinniCandidatesTest extends BaseTest {
     @DisplayName("Set Java filter and make sure that candidates have Java in title")
     void filterJavaJobTitleTest() {
         step("Open website", () -> {
-            open("/developers");
+            open("https://djinni.co/developers");
         });
 
         step("Find count of jobs on the website", () -> {
