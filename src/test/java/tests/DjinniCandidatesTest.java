@@ -18,7 +18,7 @@ public class DjinniCandidatesTest extends BaseTest {
     @DisplayName("Candidate items are displayed on the page")
     void getListOfCandidateTest() {
         step("Open website", () -> {
-            open("https://djinni.co/developers");
+            open("/developers");
         });
 
         step("Find all candidates on the page", () -> {
@@ -30,7 +30,7 @@ public class DjinniCandidatesTest extends BaseTest {
     @DisplayName("Set Java filter and make sure that candidates have Java in title")
     void filterJavaJobTitleTest() {
         step("Open website", () -> {
-            open("https://djinni.co/developers");
+            open("/developers");
         });
 
         step("Find count of jobs on the website", () -> {
