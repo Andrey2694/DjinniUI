@@ -18,4 +18,6 @@ public interface ProjectConfig extends Config {
     String browserSize();
     String remoteDriverUrl();
     String videoStorage();
+    @DefaultValue("https://djinni.co/")
+    String baseUrl();
 }
