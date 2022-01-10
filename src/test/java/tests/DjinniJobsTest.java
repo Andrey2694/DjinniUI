@@ -22,7 +22,7 @@ public class DjinniJobsTest extends BaseTest {
     @DisplayName("Open links from vacancies and check that they are not 404")
     void openLinksFromVacancies() {
         step("Open website", () -> {
-            open("jobs/");
+            open("jobs");
         });
 
         step("Open links from each vacancy on the page", () -> {
@@ -43,7 +43,7 @@ public class DjinniJobsTest extends BaseTest {
     @DisplayName("Vacancy items are displayed on the page")
     void getListOfVacancyTest() {
         step("Open website", () -> {
-            open("jobs/");
+            open("jobs");
         });
 
         step("Find all vacancy on the page", () -> {
@@ -55,7 +55,7 @@ public class DjinniJobsTest extends BaseTest {
     @DisplayName("Set Java filter and make sure that filter is displayed")
     void filterJavaTest() {
         step("Open website", () -> {
-            open("jobs/");
+            open("jobs");
         });
 
         step("Set filter", () -> {
@@ -71,7 +71,7 @@ public class DjinniJobsTest extends BaseTest {
     @DisplayName("Set Java filter and make sure that vacancies have Java in title")
     void filterJavaJobTitleTest() {
         step("Open website", () -> {
-            open("jobs/");
+            open("jobs");
         });
 
         step("Find count of jobs on the website", () -> {
@@ -87,7 +87,7 @@ public class DjinniJobsTest extends BaseTest {
     @DisplayName("Page console log should not have errors")
     void consoleShouldNotHaveErrorsTest() {
         step("Open website", () ->
-                open("jobs/"));
+                open("jobs"));
 
         step("Console logs should not contain text 'SEVERE'", () -> {
             String consoleLogs = DriverUtils.getConsoleLogs();

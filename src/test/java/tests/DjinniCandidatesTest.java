@@ -18,7 +18,7 @@ public class DjinniCandidatesTest extends BaseTest {
     @DisplayName("Candidate items are displayed on the page")
     void getListOfCandidateTest() {
         step("Open website", () -> {
-            open("/developers");
+            open("developers");
         });
 
         step("Find all candidates on the page", () -> {
@@ -30,7 +30,7 @@ public class DjinniCandidatesTest extends BaseTest {
     @DisplayName("Set Java filter and make sure that candidates have Java in title")
     void filterJavaJobTitleTest() {
         step("Open website", () -> {
-            open("/developers");
+            open("developers");
         });
 
         step("Find count of jobs on the website", () -> {
@@ -46,7 +46,7 @@ public class DjinniCandidatesTest extends BaseTest {
     @DisplayName("Set Salary filter and make sure that candidates sorted by filter")
     void filterSalaryTest() {
         step("Open website", () -> {
-            open("/developers");
+            open("developers");
         });
         step("Set Salary filter 1000-1500", () -> {
             $("[name='salary_min']").val("1000");
@@ -66,7 +66,7 @@ public class DjinniCandidatesTest extends BaseTest {
     @DisplayName("Page console log should not have errors")
     void consoleShouldNotHaveErrorsTest() {
         step("Open website", () ->
-                open("/developers"));
+                open("developers"));
 
         step("Console logs should not contain text 'SEVERE'", () -> {
             String consoleLogs = DriverUtils.getConsoleLogs();
