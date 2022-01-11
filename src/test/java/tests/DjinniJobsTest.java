@@ -1,6 +1,5 @@
 package tests;
 
-import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.WebDriverRunner;
 import helpers.DriverUtils;
@@ -11,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -26,7 +26,8 @@ public class DjinniJobsTest extends BaseTest {
         });
 
         step("Open links from each vacancy on the page", () -> {
-            List<String> links = $$x("//li[@class = 'list-jobs__item']//a[@href]").stream().map(x -> x.getAttribute("href")).collect(Collectors.toList());
+            List<String> links = $$x("//li[@class = 'list-jobs__item']//a[@href]")
+                    .stream().map(x -> x.getAttribute("href")).collect(Collectors.toList());
             for (String url : links) {
                 open(url);
                 String currentUrl = WebDriverRunner.getWebDriver().getCurrentUrl();
@@ -47,7 +48,7 @@ public class DjinniJobsTest extends BaseTest {
         });
 
         step("Find all vacancy on the page", () -> {
-            $$(".list-jobs__item").shouldBe(CollectionCondition.sizeGreaterThan(0));
+            $$(".list-jobs__item").shouldBe(sizeGreaterThan(0));
         });
     }
 

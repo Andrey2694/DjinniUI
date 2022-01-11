@@ -1,12 +1,12 @@
 package tests;
 
-import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.SelenideElement;
 import helpers.DriverUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -22,7 +22,7 @@ public class DjinniCandidatesTest extends BaseTest {
         });
 
         step("Find all candidates on the page", () -> {
-            $$(".candidate-header").shouldBe(CollectionCondition.sizeGreaterThan(0));
+            $$(".candidate-header").shouldBe(sizeGreaterThan(0));
         });
     }
 
