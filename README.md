@@ -49,11 +49,12 @@ allure serve build/allure-results
 
 ### Анализ результатов в Jenkins через Allure Reports
 
-![alt "Allure Reports"](./images/Allure_Report.png)
+![alt "Allure Reports"](./images/allure_report_notifi.png)
 
 ### Анализ результатов в Allure TestOps
 
-![alt "Allure TestOps"](./images/Allure_TestOps.png)
+![alt "Allure TestOps"](./images/testOps_notifi.png)
+![alt "Allure TestOps"](./images/testOps_notifi2.png)
 
 ### Интерграция с Jira
 #### Отображение тест-кейсов и ланча
