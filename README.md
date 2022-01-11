@@ -63,4 +63,4 @@ allure serve build/allure-results
 
 ### Видео с примером прохождения теста в selenoid
 
-!["Video from Selenoid"]()
+!["Video from Selenoid"](./images/video.gif)
