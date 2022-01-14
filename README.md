@@ -24,7 +24,7 @@ ___
 или через консоль
 
 ```bash
-gradle clean test -DremoteDriverUrl=http://65.108.161.82:4444/wd/hub/ -DvideoStorage=https://selenoid.autotests.cloud/video/ -Dthreads=5
+gradle clean test -DremoteDriverUrl=http://65.108.161.82:4444/wd/hub/ -DvideoStorage=http://65.108.161.82:8080/video/ -Dthreads=5
 ```
 
 ### Используемые параметры по умолчанию
@@ -63,4 +63,4 @@ allure serve build/allure-results
 
 ### Видео с примером прохождения теста в selenoid
 
-!["Video from Selenoid"]()
+!["Video from Selenoid"](./images/video.gif)
